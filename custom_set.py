@@ -1,15 +1,11 @@
-
-
-
-
-
-
 class CustomSet:
+    
+
     def __init__(self): 
         self.items = set()
 
-    def add:(self, item):
-        self.items.add(item)
+    def add(self, item):
+       self.items.add(item)
 
     def remove(self, item):
         self.items.remove(item)
@@ -17,23 +13,19 @@ class CustomSet:
     def as_list(self):
         return list(self.items)
 
-
-    def clear:
+    def clear(self):
         self.items.clear()
 
-def main()-> None:
+def main() -> None:
     my_set = CustomSet()
     my_set.add("dog")
     my_set.add("cat")
     my_set.add("rabbit")
 
-
-    print(my_set.as_list()) # ["dog", "cat", "rabbit"]
-
+    print(my_set.as_list())  # ["dog", "cat", "rabbit"]
 
     my_set.remove("cat")
-    print(my_set.as_list()) # ["dog", "rabbit"]
-
+    print(my_set.as_list())  # ["dog", "rabbit"]
 
     try: 
         my_set.remove("fox")
@@ -41,10 +33,15 @@ def main()-> None:
         print("Item not removed, moving forward")
 
     my_set.clear()
-    print(my_set.as_list()) # []
-
+    print(my_set.as_list())  # []
 
 if __name__ == "__main__": 
     main()
 
 
+
+
+
+
+
+   
