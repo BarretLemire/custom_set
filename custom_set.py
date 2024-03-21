@@ -1,5 +1,6 @@
 class CustomSet:
     
+    my_set = []
 
     def __init__(self): 
         self.items = set()
