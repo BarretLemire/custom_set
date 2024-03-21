@@ -1,23 +1,24 @@
 class CustomSet:
-    
-    my_set = []
-
-    def __init__(self): 
-        self.items = set()
+    def __init__(self):
+        self.items = []
 
     def add(self, item):
-       self.items.add(item)
+        if item not in self.items:
+            self.items.append(item)
 
     def remove(self, item):
-        self.items.remove(item)
+        if item in self.items:
+            self.items.remove(item)
+        else:
+            raise KeyError("Item not found in the set")
 
     def as_list(self):
-        return list(self.items)
+        return self.items
 
     def clear(self):
-        self.items.clear()
+        self.items = []
 
-def main() -> None:
+def main():
     my_set = CustomSet()
     my_set.add("dog")
     my_set.add("cat")
@@ -28,7 +29,7 @@ def main() -> None:
     my_set.remove("cat")
     print(my_set.as_list())  # ["dog", "rabbit"]
 
-    try: 
+    try:
         my_set.remove("fox")
     except KeyError:
         print("Item not removed, moving forward")
@@ -36,13 +37,5 @@ def main() -> None:
     my_set.clear()
     print(my_set.as_list())  # []
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-   
